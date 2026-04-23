@@ -35,19 +35,18 @@ b64_photos = [get_b64(p) for p in photos]
 st.markdown(f"""
 <div class="profile-bar">
     <div class="profile-img"><img src="{b64_photos[0]}"></div>
-    <div class="user-id">JIYEON'S 1ST B-DAY</div>
+    <div class="user-id">jiyeon_is_coming_2026</div>
 </div>
 """, unsafe_allow_html=True)
 
-# 4. 힙 매거진 슬라이더 (중앙 정렬 패치)
+# 4. 앨범 컴포넌트
 album_html = f"""
 <style>
-    body {{ margin: 0; background: #000; overflow: hidden; padding-bottom: 20px; }}
+    body {{ margin: 0; background: #000; overflow: hidden; padding-bottom: 5px; }}
     .main-box {{ position: relative; width: 100%; height: 420px; overflow: hidden; }}
     #m {{ width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }}
     .overlay-text {{ position: absolute; bottom: 15px; left: 15px; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 3.5rem; line-height: 0.8; color: #fff; mix-blend-mode: overlay; opacity: 0.7; pointer-events: none; }}
-    /* [수정] justify-content: center로 썸네일 중앙 정렬 */
-    .row {{ display: flex; overflow-x: auto; justify-content: center; gap: 6px; padding: 10px 10px 25px; background: #000; scrollbar-width: none; }}
+    .row {{ display: flex; overflow-x: auto; justify-content: center; gap: 6px; padding: 10px 10px 15px; background: #000; scrollbar-width: none; }}
     .row::-webkit-scrollbar {{ display: none; }}
     .t {{ width: 80px; height: 80px; flex-shrink: 0; object-fit: cover; opacity: 0.4; cursor: pointer; border-radius: 4px; border: 2px solid transparent; }}
     .active {{ opacity: 1 !important; border: 2px solid #fff; }}
@@ -69,19 +68,32 @@ album_html = f"""
     document.querySelector('.t').classList.add('active');
 </script>
 """
-components.html(album_html, height=570)
+components.html(album_html, height=540)
 
-# 5. 하단 정보 카드 (커서 및 버튼명 수정)
+# 5. [수정] 캡션 추가 및 하단 카드
 st.markdown("""
-<div style="padding: 10px 20px 40px; background: #000; position: relative; z-index: 10;">
-    <div style="display: flex; gap: 18px; margin-bottom: 25px; padding-left: 5px;">
+<div style="padding: 0px 20px 40px; background: #000; position: relative; z-index: 10;">
+    
+    <div style="padding: 10px 5px 25px 5px; line-height: 1.6;">
+        <span style="font-weight: 700; font-size: 0.95rem; margin-right: 8px;">jiyeon_is_coming_2026</span>
+        <span style="font-size: 0.9rem; color: #efefef;">
+            지연이가 세상에 온 지 벌써 일 년이 되었어요! 🐣<br>
+            소중한 분들과 함께 지연이의 첫 생일을 기념하고 싶습니다.<br>
+            귀한 발걸음 하셔서 많이 축하해 주세요. ❤️
+        </span>
+        <p style="font-size: 0.8rem; color: #8e8e8e; margin-top: 8px; margin-bottom: 0;">#첫돌 #돌잔치 #공주님 #초대합니다</p>
+    </div>
+
+    <div style="display: flex; gap: 18px; margin-bottom: 25px; padding-left: 5px; border-top: 0.5px solid #222; padding-top: 20px;">
         <span style="font-size: 1.5rem; cursor: default;">❤️</span>
         <span style="font-size: 1.5rem; cursor: default;">💬</span>
         <span style="font-size: 1.5rem; cursor: default;">✈️</span>
     </div>
+    
     <div style="font-weight: 900; font-size: 2.2rem; line-height: 1.1; margin-bottom: 30px; font-family: 'Montserrat', sans-serif; letter-spacing: -1px; color: #FFF;">
         <span style="color: #FFDE4D;">PRIVATE INVITATION:</span><br>JIYEON'S 1ST BIRTHDAY
     </div>
+    
     <div style="border-left: 4px solid #FFDE4D; padding-left: 18px; margin-bottom: 40px;">
         <p style="font-size: 0.8rem; color: #888; margin: 0; letter-spacing: 1px; font-weight: 700;">SCHEDULE</p>
         <p style="font-size: 1.15rem; font-weight: 700; margin: 6px 0 22px; color: #FFF;">2026. 10. 24 (SAT) 13:00</p>
@@ -89,10 +101,12 @@ st.markdown("""
         <p style="font-size: 1.15rem; font-weight: 700; margin: 6px 0 6px; color: #FFF;">행복 가든 스테이</p>
         <p style="font-size: 0.9rem; color: #777; margin: 0;">서울 강남구 행복로 123</p>
     </div>
+    
     <div style="display: flex; gap: 10px; padding-bottom: 20px;">
         <a href="https://map.kakao.com" target="_blank" style="flex: 1; background: #252525; color: #fff; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">KAKAO MAP</a>
         <a href="https://map.naver.com" target="_blank" style="flex: 1; background: #FFDE4D; color: #000; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">NAVER MAP</a>
     </div>
+    
     <p style="color: #444; font-size: 0.8rem; margin-top: 40px; font-style: italic; letter-spacing: 1px; text-align: center;">Copyright © 2026 JIYEON. All rights reserved.</p>
 </div>
 """, unsafe_allow_html=True)
