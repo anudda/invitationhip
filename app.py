@@ -63,7 +63,7 @@ components.html(album_html, height=540)
 st.markdown("""
 <div style="padding: 0px 20px 40px; background: #000; position: relative; z-index: 10;">
     <div style="padding: 10px 5px 25px 5px; line-height: 1.6;">
-        <span style="font-weight: 700; font-size: 0.95rem; margin-right: 8px;">jiyeon_is_coming_2026</span>
+        <span style="font-weight: 700; font-size: 0.95rem; margin-right: 8px;">JIYEON'S 1ST B-DAY</span>
         <span style="font-size: 0.9rem; color: #efefef;">지연이가 세상에 온 지 벌써 일 년이 되었어요! 🐣<br>소중한 분들과 함께 지연이의 첫 생일을 기념하고 싶습니다.<br>귀한 발걸음 하셔서 많이 축하해 주세요. ❤️</span>
         <p style="font-size: 0.8rem; color: #8e8e8e; margin-top: 8px; margin-bottom: 0;">#첫돌 #돌잔치 #공주님 #초대합니다</p>
     </div>
