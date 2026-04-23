@@ -35,7 +35,7 @@ b64_photos = [get_b64(p) for p in photos]
 st.markdown(f"""
 <div class="profile-bar">
     <div class="profile-img"><img src="{b64_photos[0]}"></div>
-    <div class="user-id">jiyeon_is_coming_2026</div>
+    <div class="user-id">JIYEON'S 1ST B-DAY</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -80,7 +80,7 @@ st.markdown("""
         <span style="font-size: 1.5rem; cursor: default;">✈️</span>
     </div>
     <div style="font-weight: 900; font-size: 2.2rem; line-height: 1.1; margin-bottom: 30px; font-family: 'Montserrat', sans-serif; letter-spacing: -1px; color: #FFF;">
-        <span style="color: #FFDE4D;">LIMITED EDITION:</span><br>JIYEON'S 1ST BIRTHDAY
+        <span style="color: #FFDE4D;">PRIVATE INVITATION:</span><br>JIYEON'S 1ST BIRTHDAY
     </div>
     <div style="border-left: 4px solid #FFDE4D; padding-left: 18px; margin-bottom: 40px;">
         <p style="font-size: 0.8rem; color: #888; margin: 0; letter-spacing: 1px; font-weight: 700;">SCHEDULE</p>
@@ -93,6 +93,6 @@ st.markdown("""
         <a href="https://map.kakao.com" target="_blank" style="flex: 1; background: #252525; color: #fff; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">KAKAO MAP</a>
         <a href="https://map.naver.com" target="_blank" style="flex: 1; background: #FFDE4D; color: #000; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">NAVER MAP</a>
     </div>
-    <p style="color: #444; font-size: 0.8rem; margin-top: 40px; font-style: italic; letter-spacing: 1px; text-align: center;">Created with love for Jiyeon.</p>
+    <p style="color: #444; font-size: 0.8rem; margin-top: 40px; font-style: italic; letter-spacing: 1px; text-align: center;">Copyright © 2026 JIYEON. All rights reserved.</p>
 </div>
 """, unsafe_allow_html=True)
