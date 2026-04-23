@@ -31,7 +31,7 @@ photos = ["baby.jpg", "baby1.jpg", "baby2.jpg", "baby3.jpg"]
 b64_photos = [get_b64(p) for p in photos]
 
 # 프로필 바 (f-string 최소화)
-st.markdown(f'<div class="profile-bar"><div class="profile-img"><img src="{b64_photos[0]}"></div><div class="user-id">JIYEON'S_1ST_B-DAY</div></div>', unsafe_allow_html=True)
+st.markdown(f'<div class="profile-bar"><div class="profile-img"><img src="{b64_photos[0]}"></div><div class="user-id">jiyeon mom</div></div>', unsafe_allow_html=True)
 
 # 4. 앨범 컴포넌트
 album_html = f"""
