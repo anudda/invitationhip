@@ -10,7 +10,7 @@ def get_b64(path):
     try: return "data:image/jpeg;base64," + base64.b64encode(open(path, "rb").read()).decode()
     except: return ""
 
-# 2. 스타일 설정 (프로필 바 여백 수정)
+# 2. 스타일 설정
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@300;700;900&display=swap');
@@ -19,7 +19,6 @@ st.markdown("""
 div[data-testid="stVerticalBlock"] { gap: 0rem !important; }
 footer, header, #MainMenu { display: none !important; }
 
-/* 프로필 바: 아이콘과 아이디 사이 간격 강화 */
 .profile-bar { display: flex; align-items: center; padding: 15px; background: #000; border-bottom: 0.5px solid #222; }
 .profile-img { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 2px; margin-right: 15px; flex-shrink: 0; }
 .profile-img img { width: 100%; height: 100%; border-radius: 50%; border: 2px solid #000; object-fit: cover; }
@@ -40,17 +39,17 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# 4. 힙 매거진 슬라이더 (PC 겹침 방지 여백 추가)
+# 4. 힙 매거진 슬라이더 (중앙 정렬 패치)
 album_html = f"""
 <style>
     body {{ margin: 0; background: #000; overflow: hidden; padding-bottom: 20px; }}
     .main-box {{ position: relative; width: 100%; height: 420px; overflow: hidden; }}
     #m {{ width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }}
     .overlay-text {{ position: absolute; bottom: 15px; left: 15px; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 3.5rem; line-height: 0.8; color: #fff; mix-blend-mode: overlay; opacity: 0.7; pointer-events: none; }}
-    /* 썸네일 영역 하단 여백 확보 */
-    .row {{ display: flex; overflow-x: auto; gap: 4px; padding: 10px 5px 25px; background: #000; scrollbar-width: none; }}
+    /* [수정] justify-content: center로 썸네일 중앙 정렬 */
+    .row {{ display: flex; overflow-x: auto; justify-content: center; gap: 6px; padding: 10px 10px 25px; background: #000; scrollbar-width: none; }}
     .row::-webkit-scrollbar {{ display: none; }}
-    .t {{ width: 85px; height: 85px; flex-shrink: 0; object-fit: cover; opacity: 0.4; cursor: pointer; border-radius: 4px; }}
+    .t {{ width: 80px; height: 80px; flex-shrink: 0; object-fit: cover; opacity: 0.4; cursor: pointer; border-radius: 4px; border: 2px solid transparent; }}
     .active {{ opacity: 1 !important; border: 2px solid #fff; }}
 </style>
 <div class="main-box">
@@ -70,16 +69,15 @@ album_html = f"""
     document.querySelector('.t').classList.add('active');
 </script>
 """
-# 높이를 넉넉히 주어 PC에서도 아래 요소와 겹치지 않게 조절
 components.html(album_html, height=570)
 
-# 5. 하단 정보 카드 (여백 최적화)
+# 5. 하단 정보 카드 (커서 및 버튼명 수정)
 st.markdown("""
 <div style="padding: 10px 20px 40px; background: #000; position: relative; z-index: 10;">
     <div style="display: flex; gap: 18px; margin-bottom: 25px; padding-left: 5px;">
-        <span style="font-size: 1.5rem; cursor: pointer;">❤️</span>
-        <span style="font-size: 1.5rem; cursor: pointer;">💬</span>
-        <span style="font-size: 1.5rem; cursor: pointer;">✈️</span>
+        <span style="font-size: 1.5rem; cursor: default;">❤️</span>
+        <span style="font-size: 1.5rem; cursor: default;">💬</span>
+        <span style="font-size: 1.5rem; cursor: default;">✈️</span>
     </div>
     <div style="font-weight: 900; font-size: 2.2rem; line-height: 1.1; margin-bottom: 30px; font-family: 'Montserrat', sans-serif; letter-spacing: -1px; color: #FFF;">
         <span style="color: #FFDE4D;">LIMITED EDITION:</span><br>JIYEON'S 1ST BIRTHDAY
@@ -92,8 +90,8 @@ st.markdown("""
         <p style="font-size: 0.9rem; color: #777; margin: 0;">서울 강남구 행복로 123</p>
     </div>
     <div style="display: flex; gap: 10px; padding-bottom: 20px;">
-        <a href="https://map.kakao.com" target="_blank" style="flex: 1; background: #252525; color: #fff; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">NAVIGATE</a>
-        <a href="https://map.naver.com" target="_blank" style="flex: 1; background: #FFDE4D; color: #000; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">MAP</a>
+        <a href="https://map.kakao.com" target="_blank" style="flex: 1; background: #252525; color: #fff; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">KAKAO MAP</a>
+        <a href="https://map.naver.com" target="_blank" style="flex: 1; background: #FFDE4D; color: #000; text-decoration: none; padding: 16px 0; text-align: center; font-size: 0.8rem; font-weight: 700; border-radius: 8px; letter-spacing: 1px;">NAVER MAP</a>
     </div>
     <p style="color: #444; font-size: 0.8rem; margin-top: 40px; font-style: italic; letter-spacing: 1px; text-align: center;">Created with love for Jiyeon.</p>
 </div>
