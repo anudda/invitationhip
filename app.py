@@ -18,7 +18,7 @@ st.markdown("""
 .block-container { padding: 1rem 0rem !important; }
 div[data-testid="stVerticalBlock"] { gap: 0rem !important; }
 footer, header, #MainMenu { display: none !important; }
-.profile-bar { display: flex; align-items: center; padding: 15px; background: #000; border-bottom: 0.5px solid #222; }
+.profile-bar { display: flex; align-items: center; padding: 15px; background: #000; border-bottom: 0.5px solid #222; margin-bottom: 20px;}
 .profile-img { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 2px; margin-right: 15px; flex-shrink: 0; }
 .profile-img img { width: 100%; height: 100%; border-radius: 50%; border: 2px solid #000; object-fit: cover; }
 .user-id { font-size: 0.9rem; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
@@ -39,7 +39,6 @@ album_html = f"""
     body {{ margin: 0; background: #000; overflow: hidden; }}
     .main-box {{ position: relative; width: 100%; height: 420px; overflow: hidden; }}
     #m {{ width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }}
-    .overlay-text {{ position: absolute; bottom: 15px; left: 15px; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 3.5rem; line-height: 0.8; color: #fff; mix-blend-mode: overlay; opacity: 0.7; pointer-events: none; }}
     .row {{ display: flex; overflow-x: auto; justify-content: center; gap: 6px; padding: 10px 10px 15px; background: #000; scrollbar-width: none; }}
     .t {{ width: 80px; height: 80px; flex-shrink: 0; object-fit: cover; opacity: 0.4; cursor: pointer; border-radius: 4px; border: 2px solid transparent; }}
     .active {{ opacity: 1 !important; border: 2px solid #fff; }}
