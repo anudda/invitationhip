@@ -44,12 +44,11 @@ album_html = f"""
     .t {{ width: 80px; height: 80px; flex-shrink: 0; object-fit: cover; opacity: 0.4; cursor: pointer; border-radius: 4px; border: 2px solid transparent; }}
     .active {{ opacity: 1 !important; border: 2px solid #fff; }}
 </style>
-<div class="main-box"><img id="m" src="{b64_photos[0]}"><div class="overlay-text">01<br>ST.</div></div>
+<div class="main-box"><img id="m" src="{b64_photos[0]}"></div>
 <div class="row">{"".join([f'<img class="t" src="{p}" onclick="s(this, \'{p}\', {i})">' for i, p in enumerate(b64_photos)])}</div>
 <script>
     function s(el, src, i) {{
         document.getElementById('m').src = src;
-        document.querySelector('.overlay-text').innerHTML = "0" + (i+1) + "<br>ST.";
         document.querySelectorAll('.t').forEach(t => t.classList.remove('active'));
         el.classList.add('active');
     }}
